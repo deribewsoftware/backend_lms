@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+  <style>
+    body{
+      font-family: "Poppins",sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .message{
+      text-align: center;
+font-size: 18px;
+margin-bottom: 20px;
+padding-top: 50px;
+    }
+    .message-sm{}
+
+    .container{
+      max-width: 600px;
+      height: 100vh;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #4f5ef1;
+      box-shadow: 0 4px,8px rgba(0,0,0,0.1);
+      color: #ffffff;
+
+    }
+
+
+  </style>
+</head>
+<body>
+ <div class="container">
+  <div class="message-sm">
+    <h1>Your E~Learing Order is confirmed!</h1>
+    <p>And we're  just as excited as you're</p>
+  </div>
+  <br/>
+  <br/>
+
+  <div class="course-info">
+    <h4>Here is what you Order:</h4>
+    <table style="border-bottom: 1px solid #0000002f;">
+      <tr>
+        <td>
+          Order #:<%= order._id %>
+        </td>
+        <td>
+          Order Date #:<%= order.date %>
+        </td>
+      </tr>
+
+    </table>
+    <table style="width: 90%; margin: auto; display: block;">
+      <tr>
+        <td class="first-td">Item</td>
+        <td class="first-td">Qty</td>
+        <td class="first-td">Cost</td>
+      </tr>
+
+      <tr>
+        <td class="second-td"><%= order.name %></td>
+        <td class="second-td">1</td>
+        <td class="second-td">$<%= order.price %></td>
+      </tr>
+    </table>
+
+    <table class="table-row"
+    style="border-top: 1px solid #00000029;"
+    >
+<tr>
+  <td class="col-2">subtotal:</td>
+  <td class="col-2">$<%= order.price %></td>
+</tr>
+    </table>
+
+    <table class="table-row"
+    style="margin-top: -20px;"
+    >
+<tr>
+  <td class="col-2">Total:</td>
+  <td class="col-2">$<%= order.price %></td>
+</tr>
+    </table>
+
+
+  </div>
+
+  <div class="footer">
+
+    <p>if you have any questions please contact our support team at
+      <a href="mailto:deribewsoftware@gmail.com">deribewsoftware@gmail.com</a>
+    </p>
+    <p>&cop; 2023 E~Learing all rights reserved</p>
+  </div>
+ </div> 
+</body>
+</html>
